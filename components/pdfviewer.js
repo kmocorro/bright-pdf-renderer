@@ -62,14 +62,14 @@ const styles = StyleSheet.create({
 // Create Document Component
 export default function MyDocument (props) {
   return (
-  <PDFViewer height="660" width="100%">
+  <PDFViewer height="720" width="100%">
   <Document>
-    <Page style={styles.body}>
+    <Page style={styles.body} orientation="landscape">
       <Text style={styles.header} fixed>
-        Year: {props.bi.submission_year} Week: {props.bi.submission_week} ID: {props.bi.bi_id} Status: {props.bi.current} Benefactor: {props.bi.benefactor} Initial Impact: {props.bi.initial_impact}  FA: {props.bi.fa} FA Approver: {props.bi.fa_approver} FA date: {props.bi.fa_date} RA: {props.bi.ra} RA Assessor: {props.bi.ra_assessor} RA date: {props.bi.ra_date} Action: {props.bi.action} Action Owner: {props.bi.action_owner} Action Date: {props.bi.action_date} W/Denied Action: {props.bi.with_deniedAction} Implementation: {props.bi.implementation} Implementor: {props.bi.implementor} Implementation Date: {props.bi.implementation_date}
+        Year: {props.bi.submission_year}{`    `}Week: {props.bi.submission_week} {`    `}ID: {props.bi.bi_id} {`    `}Status: {props.bi.current} {`    `}Benefactor: {props.bi.benefactor} {`    `}Initial Impact: {props.bi.initial_impact} {`    `}FA: {props.bi.fa} {`    `}FA Approver: {props.bi.fa_approver} {`    `}FA date: {props.bi.fa_date} {`    `}RA: {props.bi.ra} {`    `}RA Assessor: {props.bi.ra_assessor} {`    `}RA date: {props.bi.ra_date} {`    `}Action: {props.bi.action} {`    `}Action Owner: {props.bi.action_owner} {`    `}Action Date: {props.bi.action_date} {`    `}W/Denied Action: {props.bi.with_deniedAction} {`    `}Implementation: {props.bi.implementation} {`    `}Implementor: {props.bi.implementor} {`    `}Implementation Date: {props.bi.implementation_date}
       </Text>
       <Text style={styles.title}>{props.bi.title}</Text>
-      <Text style={styles.author}>Employee No. : {props.bi.creator} | Shift: {props.bi.shift} | SPS Team: {props.bi.sps_team}</Text>
+      <Text style={styles.author}>Employee No. : {props.bi.creator} {`    `} Shift: {props.bi.shift} {`    `} SPS Team: {props.bi.sps_team}</Text>
       <Text style={{textAlign:'center', fontSize: '12', color: 'gray'}}>Before</Text>
       <Image
         style={styles.image}
@@ -89,12 +89,16 @@ export default function MyDocument (props) {
         )
       }
       <Text style={styles.subtitle}>
-        {props.bi.title}
+        Current Practice
+      </Text>
+      <Text style={styles.text}>
+        {props.bi.current_practice}
+      </Text>
+      <Text style={styles.subtitle}>
+        Proposal
       </Text>
       <Text style={styles.text}>
         {props.bi.proposal}
-      </Text>
-      <Text style={styles.text}>
       </Text>
     </Page>
   </Document>
