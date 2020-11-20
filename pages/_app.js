@@ -1,7 +1,7 @@
 import App from "next/app";
 import React from "react";
 import Head from 'next/head'
-import '../styles/tailwind.css';
+//import '../styles/tailwind.css';
 import '../styles/global.css';
 
 export default class MyApp extends App {
