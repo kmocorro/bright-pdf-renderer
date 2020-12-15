@@ -103,6 +103,7 @@ export default function MyDocument (props) {
           <Image
             src={`http://10.3.10.209:4546/images/${props.bi.before_imgPath}`}
           />
+          <a download={`${props.bi.before_imgPath}.jpg`} href={`http://10.3.10.209:4546/images/${props.bi.before_imgPath}`} title="before">Download image</a>
         </View>
         {
           props.bi.after_imgPath ? (
@@ -111,6 +112,7 @@ export default function MyDocument (props) {
               <Image
                 src={`http://10.3.10.209:4546/images/${props.bi.after_imgPath}`}
               />
+              <a download={`${props.bi.after_imgPath}.jpg`} href={`http://10.3.10.209:4546/images/${props.bi.after_imgPath}`} title="after">Download image</a>
             </View>
           ):(
           <View style={styles.fixed}>
