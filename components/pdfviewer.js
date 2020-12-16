@@ -1,5 +1,5 @@
 import React from 'react';
-import { PDFViewer, Page, Text, View, Document, StyleSheet, Font, Image } from '@react-pdf/renderer';
+import { PDFViewer, Page, Text, View, Document, StyleSheet, Font, Image, Link } from '@react-pdf/renderer';
 
 Font.register({
   family: 'Oswald',
@@ -103,7 +103,7 @@ export default function MyDocument (props) {
           <Image
             src={`http://10.3.10.209:4546/images/${props.bi.before_imgPath}`}
           />
-          <a download={`${props.bi.before_imgPath}.jpg`} href={`http://10.3.10.209:4546/images/${props.bi.before_imgPath}`} title="before">Download image</a>
+          <Link download={`${props.bi.before_imgPath}.jpg`} href={`http://10.3.10.209:4546/images/${props.bi.before_imgPath}`} title="before">Download image</Link>
         </View>
         {
           props.bi.after_imgPath ? (
@@ -112,7 +112,7 @@ export default function MyDocument (props) {
               <Image
                 src={`http://10.3.10.209:4546/images/${props.bi.after_imgPath}`}
               />
-              <a download={`${props.bi.after_imgPath}.jpg`} href={`http://10.3.10.209:4546/images/${props.bi.after_imgPath}`} title="after">Download image</a>
+              <Link download={`${props.bi.after_imgPath}.jpg`} href={`http://10.3.10.209:4546/images/${props.bi.after_imgPath}`} title="after">Download image</Link>
             </View>
           ):(
           <View style={styles.fixed}>
